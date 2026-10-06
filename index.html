@@ -1,0 +1,482 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laxmi - Official Store</title>
+
+    <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1095702889514444');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1095702889514444&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gold: #b48be0;
+            --gold-light: #d9b8ff;
+            --gold-pale: #c9a0f5;
+            --deep: #07050f;
+            --surface: #0e0a1a;
+            --card-bg: #110d1e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--deep);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ── Animated mesh background ── */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 20% 0%, rgba(140,80,220,0.18) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 50% at 80% 100%, rgba(180,139,224,0.12) 0%, transparent 55%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ── Grid pattern ── */
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(140,80,220,0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(140,80,220,0.06) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── Floating orbs ── */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+            z-index: 0;
+            animation: drift 12s ease-in-out infinite alternate;
+        }
+        .orb-1 { width: 300px; height: 300px; background: rgba(120,60,200,0.15); top: -80px; left: -80px; }
+        .orb-2 { width: 200px; height: 200px; background: rgba(180,139,224,0.10); bottom: -60px; right: -60px; animation-delay: -6s; }
+
+        @keyframes drift {
+            from { transform: translate(0, 0) scale(1); }
+            to   { transform: translate(30px, 20px) scale(1.1); }
+        }
+
+        /* ── Card ── */
+        .card {
+            background: var(--card-bg);
+            border-radius: 32px;
+            padding: 52px 44px 44px;
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            border: 1px solid rgba(140,80,220,0.22);
+            box-shadow:
+                0 0 0 1px rgba(140,80,220,0.07),
+                0 40px 100px rgba(0,0,0,0.9),
+                inset 0 1px 0 rgba(255,255,255,0.04);
+            animation: cardIn 0.7s cubic-bezier(0.16,1,0.3,1) both;
+        }
+
+        @keyframes cardIn {
+            from { opacity: 0; transform: translateY(40px) scale(0.97); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* Decorative top border line */
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 10%; right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #9c5ce6, transparent);
+            border-radius: 2px;
+        }
+
+        /* ── Logo ── */
+        .logo-wrap {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 28px;
+            cursor: pointer;
+        }
+
+        .logo-ring {
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            background: linear-gradient(135deg, var(--gold), transparent, var(--gold)) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            animation: spin 8s linear infinite;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .logo-box {
+            width: 130px;
+            height: 130px;
+            border-radius: 26px;
+            background: linear-gradient(145deg, #1a1030, #0a0818);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(140,80,220,0.35);
+            box-shadow:
+                0 0 0 4px rgba(140,80,220,0.07),
+                0 20px 60px rgba(0,0,0,0.6),
+                inset 0 1px 0 rgba(255,255,255,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .logo-wrap:hover .logo-box {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow:
+                0 0 0 4px rgba(140,80,220,0.15),
+                0 30px 70px rgba(140,80,220,0.25),
+                inset 0 1px 0 rgba(255,255,255,0.08);
+        }
+
+        .logo-box img { width: 80%; height: auto; }
+
+        /* ── Heading ── */
+        .brand-name {
+            font-family: 'Cinzel', serif;
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #d9b8ff 0%, #9c5ce6 50%, #c9a0f5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 6px;
+        }
+
+        .tagline {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(180,139,224,0.5);
+            margin-bottom: 32px;
+            font-weight: 400;
+        }
+
+        /* ── Divider ── */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+        .divider::before, .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(140,80,220,0.22));
+        }
+        .divider::after { background: linear-gradient(270deg, transparent, rgba(140,80,220,0.22)); }
+        .divider span { font-size: 10px; color: rgba(140,80,220,0.4); letter-spacing: 2px; }
+
+        /* ── Stats ── */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 32px;
+        }
+
+        .stat {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(140,80,220,0.18);
+            border-radius: 16px;
+            padding: 16px 8px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(140,80,220,0.10), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .stat:hover { border-color: rgba(140,80,220,0.45); transform: translateY(-2px); }
+        .stat:hover::before { opacity: 1; }
+
+        .stat strong {
+            display: block;
+            font-family: 'Cinzel', serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--gold-pale);
+            margin-bottom: 4px;
+        }
+
+        .stat span {
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.35);
+        }
+
+        /* ── Download Button ── */
+        .download-btn {
+            display: block;
+            padding: 18px 28px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #8b3fe8 0%, #6a1fb5 40%, #9c5ce6 100%);
+            background-size: 200% 200%;
+            color: #fff;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 1px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            animation: shimmer 3s ease-in-out infinite;
+            box-shadow:
+                0 4px 24px rgba(140,80,220,0.45),
+                0 1px 0 rgba(255,255,255,0.15) inset;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .download-btn::before {
+            content: "";
+            position: absolute;
+            top: 0; left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+            transform: skewX(-20deg);
+            animation: btnShine 2.8s ease-in-out infinite;
+        }
+
+        @keyframes btnShine {
+            0%   { left: -100%; }
+            60%, 100% { left: 160%; }
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 40px rgba(140,80,220,0.6), 0 1px 0 rgba(255,255,255,0.2) inset;
+        }
+
+        .download-btn:active { transform: translateY(-1px); }
+
+        .btn-icon { margin-right: 8px; font-size: 16px; }
+
+        /* ── Footer ── */
+        .footer {
+            margin-top: 24px;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            color: rgba(255,255,255,0.2);
+            text-transform: uppercase;
+        }
+
+        /* ── Particles (CSS only) ── */
+        .particles {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #9c5ce6;
+            border-radius: 50%;
+            opacity: 0;
+            animation: float-up var(--dur) linear var(--delay) infinite;
+        }
+
+        @keyframes float-up {
+            0%   { opacity: 0; transform: translateY(0) scale(1); }
+            10%  { opacity: 0.6; }
+            90%  { opacity: 0.2; }
+            100% { opacity: 0; transform: translateY(-100vh) scale(0.3); }
+        }
+
+        @media (max-width: 400px) {
+            .card { padding: 40px 24px 36px; }
+            .brand-name { font-size: 24px; letter-spacing: 3px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Floating orbs -->
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<!-- Particles -->
+<div class="particles" id="particles"></div>
+
+<div class="wrapper">
+  <div class="card">
+
+    <div class="logo-wrap hero-app-icon" id="logoClick">
+      <div class="logo-ring"></div>
+      <div class="logo-box">
+        <img src="https://akagency.laxmikalyan1.fun/logo.webp" alt="laxmi.samratsatta.sbs">
+      </div>
+    </div>
+
+    <div class="brand-name">Laxmi kakyan</div>
+    <div class="tagline">Royal &bull; Trusted &bull; Premium</div>
+
+    <div class="divider"><span>✦</span></div>
+
+    <div class="stats hero-stats">
+      <div class="stat" onclick="trackStat('Downloads')">
+        <strong>1M+</strong>
+        <span>Downloads</span>
+      </div>
+      <div class="stat" onclick="trackStat('Rating')">
+        <strong>4.9★</strong>
+        <span>Rating</span>
+      </div>
+      <div class="stat" onclick="trackStat('Security')">
+        <strong>100%</strong>
+        <span>Secure</span>
+      </div>
+    </div>
+
+    <a href="https://laxmikalyan.club/assets/apkk/laxmikalyan.apk" class="download-btn" id="quickDL">
+      <span class="btn-icon">⬇</span>Download Application
+    </a>
+
+    <div class="footer">© Samrat 
+    
+    </div>
+
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+// ── Particle Generator ──
+(function() {
+    const container = document.getElementById('particles');
+    for (let i = 0; i < 22; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.style.cssText = `
+            left: ${Math.random() * 100}%;
+            bottom: -10px;
+            --dur: ${6 + Math.random() * 10}s;
+            --delay: ${Math.random() * 8}s;
+            opacity: 0;
+            width: ${1 + Math.random() * 2}px;
+            height: ${1 + Math.random() * 2}px;
+        `;
+        container.appendChild(p);
+    }
+})();
+
+// ── Tracking ──
+function trackStat(name) {
+    fbq('track', 'StatClicked', { type: name });
+    console.log("Stat Tracked: " + name);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    window.fbq = window.fbq || function() { (window.fbq.q = window.fbq.q || []).push(arguments) };
+
+    fbq('track', 'PageView');
+    fbq('track', 'Visit', { domain: 'laxmi.samratsatta.sbs' });
+    fbq('track', 'LandingPageView');
+    fbq('track', 'FullLoadComplete');
+
+    const dlBtn = document.getElementById('quickDL');
+    if (dlBtn) {
+        dlBtn.addEventListener("click", function() {
+            fbq('track', 'HeroDownloadClick');
+            fbq('track', 'DownloadClick', {
+                file: 'laxmikalyan.apk',
+                domain: 'laxmi.samratsatta.sbs'
+            });
+            fbq('track', 'SidebarDownloadClick');
+        });
+    }
+
+    const logo = document.getElementById('logoClick');
+    if (logo) {
+        logo.addEventListener("click", () => {
+            fbq('track', 'AppIconClick');
+            fbq('track', 'LogoClicked');
+        });
+    }
+
+    let scrollMarks = {25:false, 50:false, 75:false, 100:false};
+    window.addEventListener('scroll', function() {
+        let docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (docHeight <= 0) return;
+        let scrolled = Math.round((window.scrollY / docHeight) * 100);
+
+        if (scrolled >= 25 && !scrollMarks[25]) { fbq('track', 'Scroll25'); scrollMarks[25] = true; }
+        if (scrolled >= 50 && !scrollMarks[50]) { fbq('track', 'Scroll50'); scrollMarks[50] = true; }
+        if (scrolled >= 75 && !scrollMarks[75]) { fbq('track', 'Scroll75'); scrollMarks[75] = true; }
+        if (scrolled >= 95 && !scrollMarks[100]) { fbq('track', 'Scroll100'); scrollMarks[100] = true; }
+    });
+});
+</script>
+
+</body>
+</html>
